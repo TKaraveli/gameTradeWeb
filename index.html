@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Oyun Takas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.sldr.js"></script>
+
+    <script>
+        $( window ).load( function() {
+
+            $( '.sldr' ).each( function() {
+                var th = $( this );
+                th.sldr({
+                    focalClass    : 'focalPoint',
+                    offset        : th.width() / 2,
+                    sldrWidth     : 'responsive',
+                    nextSlide     : th.nextAll( '.sldr-nav.next:first' ),
+                    previousSlide : th.nextAll( '.sldr-nav.prev:first' ),
+                    selectors     : th.nextAll( '.selectors:first' ).find( 'li' ),
+                    toggle        : th.nextAll( '.captions:first' ).find( 'div' ),
+                    sldrInit      : sliderInit,
+                    sldrStart     : slideStart,
+                    sldrComplete  : slideComplete,
+                    sldrLoaded    : sliderLoaded,
+                    sldrAuto      : true,
+                    sldrTime      : 5000,
+                    hasChange     : true
+                });
+            });
+
+        });
+
+
+        function sliderInit( args ) {
+
+        }
+
+
+        function slideLoaded( args ) {
+
+        }
+
+
+        function sliderLoaded( args ) {
+
+        }
+
+
+        function slideStart( args ) {
+
+        }
+
+
+        function slideComplete( args ) {
+
+        }
+
+        jQuery(function($){
+            $('.table').footable();
+        });
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+
+    </script>
+    <style>
+
+        body {
+            background-color: aliceblue;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        footer {
+            background-color: darkcyan;
+            padding: 15px;
+
+        }
+
+        #footerYazi {
+            color: aliceblue;
+            font-family: "Times New Roman", Georgia, Serif;
+            font-size: 150%;
+            text-align: center;
+        }
+
+        #buton1
+
+        {
+
+            background-color: #262626;
+            font-family: "Times New Roman", Georgia, Serif;
+            font-size: 100%;
+            margin-top: 8%;
+        }
+
+        #buton2
+
+        {
+            color: white;
+            background-color: #262626;
+            font-family: "Comic Sans MS";
+            font-size: 100%;
+        }
+
+        #buton3
+
+        {
+            color: white;
+            background-color: #262626;
+            font-family: "Comic Sans MS";
+            font-size: 100%;
+        }
+
+        h1 {
+            color: darkred;
+            font-family: "Times New Roman", Georgia, Serif;
+            text-align: center;
+        }
+
+        hr {
+            align: center;
+            width: 80%;
+            border-color: black;
+        }
+
+        #bildirimler {
+            margin-left: 5px;
+        }
+
+        #mesajlar {
+            margin-left: 5px;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: darkred;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Anasayfa</a></li>
+                <li><a href="ps4.html">PS4</a></li>
+                <li><a href="xone.html">Xbox One</a></li>
+                <li><a href="pc.html">PC</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Eski Nesil <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ps3.html">PS3</a></li>
+                        <li><a href="x360.html">Xbox 360</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <button type="button" class="btn btn-default btn-md">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                    <input type="text" class="form-control" placeholder="Ara">
+                </div>
+                <button type="submit" class="btn btn-default">Git</button>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="#">Profiliniz</a></li>
+                <li role="presentation"><a href="#">Bildirimler<span class="badge" id="bildirimler">42</span></a></li>
+                <li role="presentation"><a href="#">Mesajlarınız<span class="badge" id="mesajlar">3</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">İletişim<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" target="_blank">Facebook</a></li>
+                        <li><a href="#" target="_blank">Twitter</a></li>
+                        <li><a href="mailto:tayfunkaraveli@hotmail.com" target="_blank">E-mail</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="mesaj.html">Bize ulaşın</a></li>
+                    </ul>
+                </li>
+                <li><button type="button" class="btn btn-inverse btn-sm" id="buton1">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Çıkış</a></li>
+                </button></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="stage">
+
+    <div id="SLDR-ONE" class="sldr">
+        <ul class="wrp animate">
+            <li class="elmnt-one"><div class="skew"><div class="wrap"><img src="img/witcher.jpg" width="1000" height="563"></div></div></li>
+            <li class="elmnt-two"><div class="skew"><div class="wrap"><img src="img/pes.jpg" width="1000" height="563"></div></div></li>
+            <li class="elmnt-three"><div class="skew"><div class="wrap"><img src="img/fifa.jpg" width="1000" height="563"></div></div></li>
+            <li class="elmnt-four"><div class="skew"><div class="wrap"><img src="img/residentevil.jpg" width="1000" height="563"></div></div></li>
+        </ul>
+    </div>
+
+    <div class="clear"></div>
+
+
+    <ul class="selectors">
+        <li class="focalPoint"><a href="">•</a></li><li><a href="">•</a></li><li><a href="">•</a></li><li><a href="">•</a></li>
+    </ul>
+
+    <button class="sldr-prv sldr-nav prev" id="buton2">Geri</button>
+    <button class="sldr-nxt sldr-nav next" id="buton3">İleri</button>
+
+
+    <div class="clear"></div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</div>
+
+<div class="page-header">
+    <h1>En popüler 10 oyun</h1>
+</div>
+
+<table class="table" data-sorting="true">
+    <thead>
+    <tr>
+        <th data-breakpoints="xs" data-type="number">ID</th>
+        <th>Ad</th>
+        <th data-breakpoints="xs">Platform</th>
+        <th data-breakpoints="xs sm" data-type="date" data-format-string="MMMM Do YYYY">Puan</th>
+        <th data-breakpoints="xs sm md" data-type="date" data-format-string="MMMM Do YYYY">Çıkış Tarihi</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td><a href="zelda.html">The Legend of Zelda: Breath of the Wild</a></td>
+        <td>Nintendo</td>
+        <td>97</td>
+        <td>3 Mart, 2017</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><a href="outlast2.html">Outlast 2</a></td>
+        <td>PS4,Xbox One,PC</td>
+        <td>77</td>
+        <td>25 Nisan, 2017</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><a href="sniper3.html">Sniper: Ghost Warrior 3</a></td>
+        <td>PS4,Xbox One,PC</td>
+        <td>57</td>
+        <td>25 Nisan, 2017</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><a href="finch.html">What Remains of Edith Finch</a></td>
+        <td>PS4,PC</td>
+        <td>88</td>
+        <td>25 Nisan, 2017</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><a href="persona5.html">Persona 5</a></td>
+        <td>PS4,PS3</td>
+        <td>93</td>
+        <td>4 Nisan, 2017</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td><a href="andromeda.html">Mass Effect Andromeda</a></td>
+        <td>PS4,Xbox One,PC</td>
+        <td>73</td>
+        <td>21 Mart, 2017</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td><a href="FF.html">Final Fantasy XV</a></td>
+        <td>PS4,Xbox One</td>
+        <td>81</td>
+        <td>29 Kasım, 2016</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td><a href="kamiko.html">Kamiko</a></td>
+        <td>Nintendo</td>
+        <td>83</td>
+        <td>27 Nisan, 2017</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td><a href="re7.html">Resident Evil 7: biohazard</a></td>
+        <td>PS4,Xbox One,PC</td>
+        <td>86</td>
+        <td>24 Ocak, 2017</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td><a href="wildlands.html">Tom Clancy's Ghost Recon: Wildlands</a></td>
+        <td>PS4,Xbox One,PC</td>
+        <td>71</td>
+        <td>7 Mart, 2017</td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="zelda.html"><img src="img\zelda.jpg"></a>
+
+<hr>
+
+<div class="page-header">
+    <h1>Yakında Çıkacak Popüler Oyunlar</h1>
+</div>
+
+<table class="table" data-sorting="true">
+    <thead>
+    <tr>
+        <th data-breakpoints="xs" data-type="number">ID</th>
+        <th>Ad</th>
+        <th data-breakpoints="xs">Platform</th>
+        <th data-breakpoints="xs sm" data-type="date" data-format-string="MMMM Do YYYY">Puan</th>
+        <th data-breakpoints="xs sm md" data-type="date" data-format-string="MMMM Do YYYY">Çıkış Tarihi</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td><a href="cod.html">Call of Duty: WWII</a></td>
+        <td>PS4,Xbox One,PC</td>
+        <td>---</td>
+        <td>3 Kasım, 2017</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><a href="marvelcapcom.html">Marvel vs. Capcom: Infinite</a></td>
+        <td>PS4,Xbox One,PC</td>
+        <td>---</td>
+        <td>19 Eylül, 2017</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><a href="injustice.html">Injustice 2</a></td>
+        <td>PS4,Xbox One</td>
+        <td>---</td>
+        <td>16 Mayıs, 2017</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><a href="tekken.html">Tekken 7</a></td>
+        <td>PS4,Xbox One,PC</td>
+        <td>---</td>
+        <td>2 Haziran, 2017</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><a href="prey.html">Prey</a></td>
+        <td>PS4,Xbox One,PC</td>
+        <td>---</td>
+        <td>5 Mayıs, 2017</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td><a href="DQ.html">Dragon Quest XI</a></td>
+        <td>PS4,Nintendo</td>
+        <td>---</td>
+        <td>29 Temmuz, 2017</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td><a href="minecraft.html">Minecraft: Nintendo Switch Edition</a></td>
+        <td>Nintendo</td>
+        <td>---</td>
+        <td>11 Mayıs, 2017</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td><a href="fc5.html">Far Cry 5</a></td>
+        <td>PS4,Xbox One,PC</td>
+        <td>---</td>
+        <td>27 Mart, 2018</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td><a href="ancestors.html">ANCESTORS : the Humankind Odyssey</a></td>
+        <td>PS4,Xbox One,PC</td>
+        <td>---</td>
+        <td>Açıklanmadı.</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td><a href="perception.html">Perception</a></td>
+        <td>PS4,Xbox One,PC,Nintendo</td>
+        <td>---</td>
+        <td>30 Mayıs, 2017</td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="cod.html"><img src="img\cod.jpg"></a>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Yukarı</button>
+
+<hr>
+
+<br>
+
+    <footer class="container-fluid text-center">
+        <p id="footerYazi">Tayfun Karaveli || 2017 Aralık.</p>
+    </footer>
+
+
+
+
+
+    </body>
+</html>
+
+
+
+
+
+
